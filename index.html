@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SYSTEM v1.0</title>
+
+<style>
+  body {
+    background: #000;
+    color: #00ff00;
+    font-family: "Courier New", monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .terminal {
+    border: 3px solid #00ff00;
+    padding: 20px;
+    width: 320px;
+    text-align: center;
+    background: #050505;
+  }
+
+  h2 {
+    margin-bottom: 15px;
+  }
+
+  button {
+    width: 120px;
+    padding: 10px;
+    font-family: "Courier New", monospace;
+    font-size: 16px;
+    margin: 8px;
+    border: none;
+  }
+
+  .on {
+    background: #003300;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    cursor: pointer;
+  }
+
+  .on.ativo {
+    background: #00ff00;
+    color: #000;
+    font-weight: bold;
+  }
+
+  .off {
+    background: #222;
+    color: #555;
+    border: 2px solid #555;
+    cursor: not-allowed;
+  }
+
+  #mensagem {
+    margin-top: 15px;
+    display: none;
+  }
+
+  #foto {
+    margin-top: 10px;
+    display: none;
+    width: 100%;
+    border: 2px solid #00ff00;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="terminal">
+  <h2>SYSTEM STATUS</h2>
+
+  <button class="on" id="btnOn" onclick="ativar()">ON</button>
+  <button class="off" disabled>OFF</button>
+
+  <div id="mensagem">
+    <p>🔥 caca resenha ativada no modo <b>SUPER .ON</b></p>
+  </div>
+
+  <img id="foto" src="foto.png" alt="Foto ativada">
+</div>
+
+<script>
+  function ativar() {
+    const btn = document.getElementById("btnOn");
+    btn.classList.add("ativo");
+    document.getElementById("mensagem").style.display = "block";
+    document.getElementById("foto").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
